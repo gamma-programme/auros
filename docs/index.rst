@@ -13,6 +13,7 @@ Contents:
   
   README
   installation
+  examples
 
 
 Indices and tables
