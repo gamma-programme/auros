@@ -1,5 +1,8 @@
 auROS: A UAV Apps Framework
 ===========================
+.. image:: https://readthedocs.org/projects/auros/badge/?version=latest
+  :target: https://readthedocs.org/projects/auros/?badge=latest
+  :alt: Documentation Status
 
 auROS is a distribution of ROS tailored for use in unmanned aircraft (especially those supporting MAVLink).
 It tries to make it easy to write applications that can update an aircraft's mission as it unfolds.
