@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>hello_auros_waypoints</name>
+  <version>0.0.1</version>
+  <description>The hello_auros_waypoints package</description>
+
+  <maintainer email="gareth.roberts@manchester.ac.uk">Gareth Roberts</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>mavros</build_depend>
+  <run_depend>mavros</run_depend>
+  <export></export>
+</package>

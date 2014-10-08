@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>hello_auros</name>
+  <version>0.0.1</version>
+  <description>The hello_auros package</description>
+
+  <maintainer email="gareth.roberts@manchester.ac.uk">Gareth R</maintainer>
+  <license>BSD</license>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  
+  <build_depend>gscam</build_depend>
+  <build_depend>mavros</build_depend>
+
+  <run_depend>gscam</run_depend>
+  <run_depend>mavros</run_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

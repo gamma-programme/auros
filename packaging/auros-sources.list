@@ -1,0 +1,2 @@
+deb http://gamma.mace.manchester.ac.uk/flexshare/repo trusty main
+deb http://packages.ros.org/ros/ubuntu trusty main
