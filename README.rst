@@ -7,7 +7,7 @@ auROS is designed to run on a companion 'mission management' computer which is c
 but does not directly control the aircraft.
 
 .. image:: https://readthedocs.org/projects/auros/badge/?version=latest
-  :target: https://readthedocs.org/projects/auros/?badge=latest
+  :target: http://auros.readthedocs.org/en/latest/
   :alt: Documentation Status
 
 Features
