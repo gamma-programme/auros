@@ -10,7 +10,7 @@ Package: auros-aircraft
 Version: 0.1
 Maintainer: Gareth Roberts (GAMMA Debian Signing Key) <gareth.roberts@manchester.ac.uk>
 
-Depends: ros-indigo-ros-base,ros-indigo-mavros-extras,ros-indigo-mavros,ros-indigo-gscam
+Depends: ros-indigo-ros-base,ros-indigo-mavros-extras,ros-indigo-mavros,ros-indigo-gscam,gstreamer0.10-plugins-good
 #Pre-Depends: <comma-separated list of packages>
 #Recommends: <comma-separated list of packages>
 #Suggests: <comma-separated list of packages>

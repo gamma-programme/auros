@@ -10,7 +10,7 @@ Package: auros-developer
 Version: 0.1
 Maintainer: Gareth Roberts (GAMMA Debian Signing Key) <gareth.roberts@manchester.ac.uk>
 
-Depends: ros-indigo-desktop-full,ros-indigo-mavros-extras,ros-indigo-mavros,ros-indigo-gscam
+Depends: ros-indigo-desktop-full,ros-indigo-mavros-extras,ros-indigo-mavros,ros-indigo-gscam,git
 #Pre-Depends: <comma-separated list of packages>
 #Recommends: <comma-separated list of packages>
 #Suggests: <comma-separated list of packages>
