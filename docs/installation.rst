@@ -19,7 +19,7 @@ The following commands will install the basic auros development environment on a
 
   sudo wget http://gamma.mace.manchester.ac.uk/flexshare/repo/auros-platform.list -P /etc/apt/sources.list.d/
   wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add -
-  wget https://raw.githubusercontent.com/gamma-programme/auros-packaging/master/auros.key -O - | sudo apt-key add -
+  wget https://raw.githubusercontent.com/gamma-programme/auros/master/packaging/auros-public.key -O - | sudo apt-key add -
   sudo apt-get update && sudo apt-get install auros-developer
   echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
   

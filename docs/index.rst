@@ -14,6 +14,7 @@ Contents:
   README
   installation
   examples
+  hierachy
 
 
 Indices and tables
