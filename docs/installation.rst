@@ -9,7 +9,7 @@ Prerequisites
 
 .. note:: 
 
-  The aircraft use the `minimal cd <http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/mini.iso>`_
+  The aircraft use `Ubuntu Server <http://www.ubuntu.com/download/server>`_
   as the base, to avoid any unnecessary packages.
 
 Quickstart
