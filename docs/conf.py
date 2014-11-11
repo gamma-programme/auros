@@ -49,7 +49,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'AUROS'
+project = u'auROS'
 copyright = u'2014, GAMMA Programme'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -203,7 +203,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'AUROS.tex', u'AUROS Documentation',
+  ('index', 'AUROS.tex', u'auROS Documentation',
    u'GAMMA Programme', 'manual'),
 ]
 

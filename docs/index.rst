@@ -1,4 +1,4 @@
-Welcome to AUROS's documentation!
+Welcome to auROS's documentation!
 =================================
 
 Contents:
