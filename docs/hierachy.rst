@@ -1,5 +1,9 @@
-Hierachy
+Topic Hierachy
 ========
+
+ROS nodes publish data using topics. These topics are represented by a path, such as
+"/sensors/eo/visible/image_raw". Whilst topics can be trivially remapped within ROS, we recommend
+using the following conventions for simplicity.
 
 sensors/eo
 -----------
