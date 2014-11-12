@@ -14,9 +14,9 @@ void wp_cb(const mavros::WaypointList& wp_list)
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "waypoint_lister");
+  ros::init(argc, argv, "getting_waypoints");
   ros::NodeHandle nh;
-  ros::Subscriber sub = nh.subscribe("/auros/fcu/mission/waypoints", 1, wp_cb);
+  ros::Subscriber sub = nh.subscribe("/fcu/mission/waypoints", 1, wp_cb);
   ROS_INFO("Setup complete");
   ros::spin();
   return 0;

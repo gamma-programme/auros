@@ -3,7 +3,7 @@
 
 // Standard C++ entry point
 int main(int argc, char** argv) {
-  // Announce this program to the ROS master as a "node" called "hello_world_node"
+  // Announce this program to the ROS master as a "node" called "hello_auros_node"
   ros::init(argc, argv, "hello_auros_node");
 
   // Start the node resource managers (communication, time, etc)

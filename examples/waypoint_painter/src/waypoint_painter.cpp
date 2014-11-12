@@ -23,11 +23,23 @@ void image_cb(const sensor_msgs::ImageConstPtr& msg)
       ROS_ERROR("cv_bridge exception: %s", e.what());
       return;
     }
-
+    
+    std::ostringstream text_stream;
+    
+    if(waypoints.size() > 0) 
+    {
+      text_stream << waypoints[0].x_lat << ", " << waypoints[0].y_long;
+    } 
+    else 
+    {
+      text_stream << "No waypoints";
+    }
+    
+    
     // Draw an example circle on the video stream
     if (cv_ptr->image.rows > 60 && cv_ptr->image.cols > 60)
     {
-      cv::putText(cv_ptr->image, , 
+      cv::putText(cv_ptr->image, text_stream.str().c_str(),
         cv::Point(cv_ptr->image.cols/2, 
         cv_ptr->image.rows/2), 
         cv::FONT_HERSHEY_SIMPLEX, 
@@ -53,9 +65,9 @@ int main(int argc, char** argv)
 {
   ros::init(argc, argv, "waypoint_painter");
   ros::NodeHandle nh;
-  ros::Subscriber wp_sub = nh.subscribe("/mavros/mission/waypoints", 1, wp_cb);
-  ros::Subscriber image_sub = nh.subscribe("/v4l/camera/image_raw", 1, image_cb);
-  image_pub = nh.advertise<sensor_msgs::Image>("/image_converter/output_video", 1);
+  ros::Subscriber wp_sub = nh.subscribe("/fcu/mission/waypoints", 1, wp_cb);
+  ros::Subscriber image_sub = nh.subscribe("/sensors/eo/visible/image_raw", 1, image_cb);
+  image_pub = nh.advertise<sensor_msgs::Image>("/apps/waypoint_painter/monitor", 1);
   ROS_INFO("Setup complete");
   ros::spin();
   return 0;

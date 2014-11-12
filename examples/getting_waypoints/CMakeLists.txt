@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(hello_auros_waypoints)
+project(getting_waypoints)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -106,14 +106,14 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-add_executable(hello_auros_waypoints_node src/hello_auros_waypoints_node.cpp)
+add_executable(getting_waypoints src/getting_waypoints.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(hello_auros_waypoints_node hello_auros_waypoints_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(hello_auros_waypoints_node
+target_link_libraries(getting_waypoints
   ${catkin_LIBRARIES}
 )
 
