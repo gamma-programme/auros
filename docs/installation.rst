@@ -1,6 +1,6 @@
 Installation
 ============
-AUROS is installed by adding 
+AUROS is installed by adding some packages to an existing Ubuntu 14.04 system.
 
 Prerequisites
 -------------
