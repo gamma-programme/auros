@@ -51,6 +51,22 @@ A client can make a persistent connection to a service, which enables higher per
 
 For more information see http://wiki.ros.org/Services.
 
+Messages
+--------
+
+Nodes communicate with each other by publishing messages to topics. A message is a simple data structure, comprising typed fields. Standard primitive types (integer, floating point, boolean, etc.) are supported, as are arrays of primitive types. Messages can include arbitrarily nested structures and arrays (much like C structs).
+
+Nodes can also exchange a request and response message as part of a ROS service call. These request and response messages are defined in srv files.
+
+A message may include a special message type called 'Header', which includes some common metadata fields such as a timestamp and a frame ID. 
+The ROS Client Libraries will automatically set some of these fields for you if you wish, so their use is highly encouraged.
+
+There are three fields in the header message shown below. The seq field corresponds to an id that automatically increases as messages are sent from a given publisher. 
+The stamp field stores time information that should be associated with data in a message. In the case of a laser scan, for example, the stamp might correspond to the time at which the scan was taken. 
+The frame_id field stores frame information that should be associated with data in a message. In the case of a laser scan, this would be set to the frame in which the scan was taken.
+
+For more information see http://wiki.ros.org/Messages.
+
 Overview
 --------
 
