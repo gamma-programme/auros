@@ -61,6 +61,32 @@ The following example subscribes to the waypoint topic which publishes the waypo
 
 Making Requests with Services
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following example requests the flight control system to resend the waypoint list. ::
+
+  #include <ros/ros.h>
+  #include <mavros/WaypointPull.h>
+
+  int main(int argc, char** argv)
+  {
+    ros::init(argc, argv, "getting_waypoints");
+    ros::NodeHandle nh;
+    ros::NodeHandle n;
+    ros::ServiceClient client = n.serviceClient<mavros::WaypointPull>("/mission/WaypointPull");
+    
+    mavros::WaypointPull srv;
+    
+    if (client.call(srv))
+    {
+      ROS_INFO("Received Waypoints: %iu", (uint32_t)srv.response.wp_received);
+    }
+    else
+    {
+      ROS_ERROR("Failed to call service add_two_ints");
+      return -1;
+    }
+
+    return 0;
+  }
   
 Integrating Existing Software
 -----------------------------
