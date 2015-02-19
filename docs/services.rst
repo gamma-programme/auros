@@ -1,86 +1,33 @@
 Services
 ========
 
-Services are usually used by applications to request actions from the Flight Control System.
+Services are used by applications to request actions from the Flight Control System.
 
 Mission
 --------
+The mission services are used to make alterations to the aircraft's waypoints.
 
-.. _mavros/WaypointPull:
- 
-mavros/WaypointPull
--------------------
+.. data:: /mission/WaypointPull
+**Message:** :ref:`mavros/WaypointPull`
 
-Request current waypoints from fcs.
-	
-	Includes :ref:`mavros/Waypoint`. ::
+Request list of waypoints from FCS. Aircraft responds with confirmation message.
 
-	# Requests waypoints from device
-	#
-	# Returns success status and received count
+.. data:: /mission/WaypointPush
+**Message:** :ref:`mavros/WaypointPush`
 
-	---
-	bool success
-	uint32 wp_received
+Send waypoints to FCS. Aircraft responds with confirmation message.
 
-.. _mavros/WaypointPush:
+.. data:: /mission/WaypointClear
+**Message:** :ref:`mavros/WaypointClear`
 
-mavros/WaypointPush
--------------------
+Clears waypoints stored in FCS. Aircraft responds with confirmation message.
 
-Send waypoints to a device.
+.. data:: /mission/WaypointSetCurrent
+**Message:** :ref:`mavros/WaypointSetCurrent`
 
-Includes :ref:`mavros/Waypoint`. ::
+Sets current sequence number in the FCS. Aircraft responds with confirmation message.
 
-	# Send waypoints to device
-	#
-	# Returns success status and transfered count
+.. data:: /mission/WaypointGOTO
+**Message:** :ref:`mavros/WaypointGOTO`
 
-	mavros/Waypoint[] waypoints
-	---
-	bool success
-	uint32 wp_transfered
-
-.. _mavros/WaypointClear:
-
-mavros/WaypointClear
---------------------
-
-Clears current list of waypoints of a device. ::
-
-	# Request clear waypoint
-
-	---
-	bool success
-
-.. _mavros/WaypointSetCurrent:
-
-mavros/WaypointSetCurrent
--------------------------
-
-Sets waypoint number to go to now. From the current list of waypoints ::
-
-	# Request set current waypoint
-	#
-	# wp_seq - index in waypoint array
-
-	uint16 wp_seq
-	---
-	bool success
-
-.. _mavros/WaypointGOTO:
-
-mavros/WaypointGOTO
--------------------
-
-Sends platform to a specific location.
-
-Includes :ref:`mavros/Waypoint`. ::
-
-# Request go to waypoint
-#
-# Only supported FCU will return result
-
-mavros/Waypoint waypoint
----
-bool success
+Sends aircraft to a specific waypoint.

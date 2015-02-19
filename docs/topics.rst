@@ -76,6 +76,8 @@ Information about the aircraft current heading in degrees.
 
 Information about the aircraft ground velocity vector, as fused by FCU in m/s.
 
+.. _/mission/WaypointList:
+
 Mission
 --------
 
@@ -83,31 +85,6 @@ Mission
 **Message:** :ref:`mavros/WaypointList`
 
 Information about current waypoint list loaded into FCS, updated whenever a change is made.
-
-.. data:: /mission/WaypointPull
-**Message:** :ref:`mavros/WaypointPull`
-
-Request waypoint from device. Aircraft responds with confirmation message.
-
-.. data:: /mission/WaypointPush
-**Message:** :ref:`mavros/WaypointPush`
-
-Send waypoints to a device. Aircraft responds with confirmation message.
-
-.. data:: /mission/WaypointClear
-**Message:** :ref:`mavros/WaypointClear`
-
-Clears waypoints stored in a device. Aircraft responds with confirmation message.
-
-.. data:: /mission/WaypointSetCurrent
-**Message:** :ref:`mavros/WaypointSetCurrent`
-
-Sets current sequence number in the list. Aircraft responds with confirmation message.
-
-.. data:: /mission/WaypointGOTO
-**Message:** :ref:`mavros/WaypointGOTO`
-
-Sends aircraft to a specific waypoint (currently only supported by APM firmware).
 
 Applications
 ------------
