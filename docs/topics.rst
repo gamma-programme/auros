@@ -85,7 +85,32 @@ If you wish to take advantage of ROS's interprocess communication functionality 
 Mission
 --------
 
-.. data:: /fcs/WaypointList
+.. data:: /mission/WaypointList
 **Message:** :ref:`mavros/WaypointList`
 
-Current waypoint list loaded into FCS
+Current waypoint list loaded into FCS.
+
+.. data:: /mission/WaypointPull
+**Message:** :ref:`mavros/WaypointPull`
+
+Request waypoint from device. Aircraft responds with confirmation message.
+
+.. data:: /mission/WaypointPush
+**Message:** :ref:`mavros/WaypointPush`
+
+Send waypoints to a device. Aircraft responds with confirmation message.
+
+.. data:: /mission/WaypointClear
+**Message:** :ref:`mavros/WaypointClear`
+
+Clears waypoints stored in a device. Aircraft responds with confirmation message.
+
+.. data:: /mission/WaypointSetCurrent
+**Message:** :ref:`mavros/WaypointSetCurrent`
+
+Sets current sequence number in the list. Aircraft responds with confirmation message.
+
+.. data:: /mission/WaypointGOTO
+**Message:** :ref:`mavros/WaypointGOTO`
+
+Sends aircraft to a specific waypoint (currently only supported by APM firmware).

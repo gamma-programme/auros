@@ -300,3 +300,9 @@ Includes :ref:`mavros/Waypoint`. ::
 
   mavros/Waypoint[] waypoints
 
+.. _mavros/WaypointPull:
+
+mavros/WaypointPull
+-------------------
+
+USed to request current waypoint list from device
