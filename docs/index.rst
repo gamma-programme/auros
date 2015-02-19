@@ -15,6 +15,7 @@ Welcome to auROS!
   concepts
   examples
   topics
+  services
   messages
   support
 
