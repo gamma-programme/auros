@@ -1,9 +1,12 @@
 Installation
 ============
-AUROS is installed by adding some packages to an existing Ubuntu 14.04 system.
+AUROS can installed by either adding some packages to an existing Ubuntu 14.04 system, or using one of the prebuilt virtual machines.
+
+Existing Systems
+----------------
 
 Prerequisites
--------------
+^^^^^^^^^^^^^
 * A fully updated installation of Ubuntu 14.04 x86_64 (64 bit)
 * A working internet connection
 
@@ -13,7 +16,7 @@ Prerequisites
   as the base, to avoid any unnecessary packages.
 
 Quickstart
-----------
+^^^^^^^^^^
 
 The following commands will install the basic auros development environment on an Ubuntu 14.04 system::
 
