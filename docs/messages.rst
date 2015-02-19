@@ -22,6 +22,15 @@ Standard metadata for higher-level stamped data types. This is generally used to
   # 1: global frame
   string frame_id
 
+.. _std_msgs/Float64:
+
+std_msgs/Float64
+----------------
+
+Message containing a single 64 bit float. ::
+
+  float64 data
+
 .. _sensor_msgs/Image:
 
 sensor_msgs/Image
@@ -149,6 +158,31 @@ Represents an orientation in free space in quaternion form::
   float64 z
   float64 w
   
+.. _geometry_msgs/Vector3:
+
+geometry_msgs/Vector3
+---------------------
+
+Message containing a 64-bit 3 element vector::
+
+  # This represents a vector in free space. 
+
+  float64 x
+  float64 y
+  float64 z
+
+.. _geometry_msgs/Vector3Stamped:
+
+geometry_msgs/Vector3Stamped
+----------------------------
+
+Message containing a Vector3 with reference coordinate frame and timestamp.
+
+Includes :ref:`std_msgs/Header`, :ref:`geometry_msgs/Vector3`. ::
+
+  Header header
+  Vector3 vector
+
 .. _mavros/State:
 
 mavros/State
@@ -178,3 +212,39 @@ Includes :ref:`std_msgs/Header`. ::
   float32 voltage # [V]
   float32 current # [A]
   float32 remaining # 0..1
+
+.. _mavros/VFR_HUD:
+  
+mavros/VFR_HUD
+--------------
+
+Used to obtain a summary of the aircraft current state. Includes Airspeed [m/s], ground speed [m/s], heading [degrees], thorttle [0-1], altitude [m amsl], and climb rate [m/s].
+
+Includes :ref:`std_msgs/Header`. ::
+
+  # Metrics typically displayed on a HUD
+  
+  Header header
+  float32 airspeed # m/s
+  float32 groundspeed # m/s
+  int16 heading # degrees 0..360
+  float32 throttle # normalized to 0.0..1.0
+  float32 altitude # MSL
+  float32 climb # current climb rate m/s
+
+ .. _mavros/RadioStatus:
+ 
+ mavros/RadioStatus
+ ------------------
+
+ Used to obtain current status of communications link betweek the aircraft and Auros.::
+  # RADIO_STATUS message
+  
+  Header header
+  uint8 rssi
+  uint8 remrssi
+  uint8 txbuf
+  uint8 noise
+  uint8 remnoise
+  uint16 rxerrors
+  uint16 fixed
