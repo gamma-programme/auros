@@ -76,16 +76,16 @@ Information about the aircraft current heading in degrees.
 
 Information about the aircraft ground velocity vector, as fused by FCU in m/s.
 
-Applications
-------------
-.. data:: /apps/<application_name>/*
-
-If you wish to take advantage of ROS's interprocess communication functionality by publishing your own services use this namespace. We recommend namespacing under your application name.
-
 Mission
 --------
 
 .. data:: /fcs/WaypointList
 **Message:** :ref:`mavros/WaypointList`
 
-Current waypoint list loaded into FCS
+Information about current waypoint list loaded into FCS, updated whenever a change is made.
+
+Applications
+------------
+.. data:: /apps/<application_name>/*
+
+If you wish to take advantage of ROS's interprocess communication functionality by publishing your own services use this namespace. We recommend namespacing under your application name.
