@@ -37,7 +37,7 @@ Aircraft State
 Topics used to obtain information about the status of the FCU and aircraft power buses.
 
 .. data:: /fcs/summary
-**Message:** :ref:'mavros/VFR_HUD'
+**Message:** :ref:`mavros/VFR_HUD`
 
 Summarises some important information on the current state of the aircraft, like airspeed, groundspeed, heading, altitude, etc.
 
@@ -79,4 +79,13 @@ Information about the aircraft ground velocity vector, as fused by FCU in m/s.
 Applications
 ------------
 .. data:: /apps/<application_name>/*
+
 If you wish to take advantage of ROS's interprocess communication functionality by publishing your own services use this namespace. We recommend namespacing under your application name.
+
+Mission
+--------
+
+.. data:: /fcs/WaypointList
+**Message:** :ref:`mavros/WaypointList`
+
+Current waypoint list loaded into FCS
