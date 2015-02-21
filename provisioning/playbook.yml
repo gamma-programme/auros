@@ -1,0 +1,40 @@
+---
+- hosts: all
+  remote_user: vagrant
+  sudo: yes
+  tasks:
+    - name: add CA certificates
+      apt: name=ca-certificates
+      
+    - name: apt upgrade
+      apt: upgrade=dist update_cache=yes
+      
+    - name: add ros key
+      apt_key: url=https://raw.githubusercontent.com/ros/rosdistro/master/ros.key state=present
+      
+    - name: add auros key
+      apt_key: url=https://raw.githubusercontent.com/gamma-programme/auros/master/packaging/auros-public.key state=present
+      
+    - name: add ros repository
+      apt_repository: repo='deb http://packages.ros.org/ros/ubuntu trusty main' update_cache=no
+      
+    - name: add auros repository and update
+      apt_repository: repo='deb http://gamma.mace.manchester.ac.uk/flexshare/repo trusty main'
+    
+    - name: install auros
+      apt: name=auros-developer
+      
+    - name: install desktop
+      apt: name=xubuntu-desktop
+      
+    - name: add ROS to path
+      lineinfile: dest="/etc/profile" line="source /opt/ros/indigo/setup.bash"
+      
+    - name: add auros user
+      user: name=auros groups=dialout,sudo,adm password=$6$mFFXTb0ANX$65lA8htV/yLY4mxNSvvpPZHLVRu32i3QViIy3DsErRokqmsQkjK622Bpq85wpZSHA2GocOmGyul.I3H39X8Oe.
+      
+    - name: remove ubuntu user
+      user: name=ubuntu state=absent remove=yes
+      
+    - name: deploy auros examples
+      git: repo=https://github.com/gamma-programme/auros dest=/home/auros/Desktop/auros
