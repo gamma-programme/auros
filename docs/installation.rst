@@ -2,6 +2,32 @@ Installation
 ============
 AUROS can installed by either adding some packages to an existing Ubuntu 14.04 system, or using one of the prebuilt virtual machines.
 
+Virtual Machines
+----------------
+
+Prerequisites
+^^^^^^^^^^^^^
+* Oracle Virtualbox (https://www.virtualbox.org) or other OVF compatible Virtual Machine software
+* 4GB ram (the VM defaults to using 2GB, although may work with less)
+* 10GB disk space
+* The auros_vm.zip file from the GAMMA BFS
+
+Quickstart
+^^^^^^^^^^
+Unpack the supplied zip file into a folder.
+Open Virtualbox and select File -> Import Appliance, then select the OVF file in the unpacked folder.
+The import may take a few minutes as the virtual disk image is copied into Virtualbox.
+
+The resulting machine will appear as "provisioning_default" followed by a string of numbers representing the build id of the VM.
+
+Upon starting the VM will boot into a desktop and automatically log in the auros user. The auros examples and documentation are preinstalled on the desktop.
+
+To fetch any updates to the auros examples since the VM was created:
+
+- Open the auros folder on the desktop by double clicking.
+- Right click within the folder and select *Open Terminal Here*
+- In the resulting terminal window, type ``git pull`` and press enter
+
 Existing Systems
 ----------------
 

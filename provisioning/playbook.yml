@@ -3,6 +3,9 @@
   remote_user: vagrant
   sudo: yes
   tasks:
+	- name: set hostname
+	  hostname: name=auros-vm
+	  
     - name: add CA certificates
       apt: name=ca-certificates
       
@@ -26,15 +29,24 @@
       
     - name: install desktop
       apt: name=xubuntu-desktop
+	  
+    - name: install editor
+      apt: name=geany
       
     - name: add ROS to path
       lineinfile: dest="/etc/profile" line="source /opt/ros/indigo/setup.bash"
       
     - name: add auros user
-      user: name=auros groups=dialout,sudo,adm password=$6$mFFXTb0ANX$65lA8htV/yLY4mxNSvvpPZHLVRu32i3QViIy3DsErRokqmsQkjK622Bpq85wpZSHA2GocOmGyul.I3H39X8Oe.
+      user: name=auros shell=/bin/bash groups=dialout,sudo,adm password=$6$mFFXTb0ANX$65lA8htV/yLY4mxNSvvpPZHLVRu32i3QViIy3DsErRokqmsQkjK622Bpq85wpZSHA2GocOmGyul.I3H39X8Oe.
       
     - name: remove ubuntu user
       user: name=ubuntu state=absent remove=yes
       
     - name: deploy auros examples
       git: repo=https://github.com/gamma-programme/auros dest=/home/auros/Desktop/auros
+	  
+	- name: change overship of auros examples
+	  file: path=/home/auros/Desktop/auros owner=auros group=auros
+	  
+	- name: inject desktop background
+	  opy: src=auros_wallpaper.jpg dest=/usr/share/wallpapers/auros_wallpaper.jpg
