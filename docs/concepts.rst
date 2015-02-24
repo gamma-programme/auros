@@ -35,6 +35,26 @@ There is also the Parameter Server for maintaining small amounts of state.
 
 For more information see http://wiki.ros.org/Topics.
 
+Namespaces
+----------
+
+Graph Resource Names provide a hierarchical naming structure that is used for all resources in a ROS Computation Graph, such as Nodes, Parameters, Topics, and Services. These names are very powerful in ROS and central to how larger and more complicated systems are composed in ROS, so it is critical to understand how these names work and how you can manipulate them.
+
+Before we describe names further, here are some example names:
+
+    / (the global namespace)
+
+    /r1 (a real aircraft)
+
+    /v1 (a virtual aircraft)
+
+Graph Resource Names are an important mechanism in ROS for providing encapsulation. Each resource is defined within a namespace, which it may share with many other resources. In general, resources can create resources within their namespace and they can access resources within or above their own namespace. Connections can be made between resources in distinct namespaces, but this is generally done by integration code above both namespaces. This encapsulation isolates different portions of the system from accidentally grabbing the wrong named resource or globally hijacking names.
+
+Names are resolved relatively, so resources do not need to be aware of which namespace they are in. This simplifies programming as nodes that work together can be written as if they are all in the top-level namespace. When these Nodes are integrated into a larger system, they can be pushed down into a namespace that defines their collection of code.
+
+In the context of auros, for multiple aircraft operations a node which operates per vehicle will be started in the namespace for that vehicle. All calls to a topic or parameter (such as /fcu/...) will be automatically remapped to the relevant aircraft (/r1/fcu/...) without any additional work.
+Nodes which require access to all aircraft should use global addresses and be run in the global namespace. However, this approach is far less flexible than the node per aircraft method.
+
 .. _services:
 
 Services
